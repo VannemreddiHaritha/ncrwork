@@ -14,7 +14,6 @@ int main()
 		{
 		case('0'): {strcat(a, "0000");break;}
 		case('1'): {strcat(a, "0001");break;}
-		case('2'): {strcat(a, "0010");break;}
 		case('3'): {strcat(a, "0011");break;}
 		case('4'): {strcat(a, "0100");break;}
 		case('5'): {strcat(a, "0101");break; }

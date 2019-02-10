@@ -8,7 +8,7 @@ int main()
 	for (i = 0;i < 4;i++)
 	{
 		scanf("%d", n);
-		a[i] = (char *)malloc(n * sizeof(char));
+		a[i] = (char *)malloc(n * sizeof(char*));
 		scanf("%s", a[i]);
 		if (a[i] == NULL)
 		{
@@ -18,10 +18,10 @@ int main()
 			}
 			return -1;
 		}
-		printf("%s", a[i]);
+		
 	}
-
-
+	for(i=0;i<4;i++)
+	printf("%s", a[i]);
 
 
 	getch();

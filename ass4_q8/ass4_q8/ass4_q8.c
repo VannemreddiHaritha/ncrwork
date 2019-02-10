@@ -9,7 +9,7 @@ int main()
 	{
 		scanf("%d", n);
 		a[i] = (char *)malloc(n * sizeof(char*));
-		scanf("%s", a[i]);
+		scanf("%s[^\n]", a[i]);
 		if (a[i] == NULL)
 		{
 			for (j = i;j >= 0;j--)
@@ -21,7 +21,7 @@ int main()
 		
 	}
 	for(i=0;i<4;i++)
-	printf("%s", a[i]);
+	printf("%s\n", a[i]);
 
 
 	getch();

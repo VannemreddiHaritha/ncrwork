@@ -13,7 +13,6 @@ public:
 	void getsize(int n);
 	void enque(int ele);
 	int deque();
-	int peek();
 	bool Underflow();
 	bool overflow();
 	void display();
@@ -35,17 +34,18 @@ bool queue::Underflow()
 }
 bool queue::overflow()
 {
-	return(que.rear == (que.size - 1));
+	return(que.front == (que.rear + 1)%que.size);
 }
 void queue::enque(int ele)
 {
 	if (!overflow())
 	{
-		if (que.rear == -1 && que.front == -1)
+		if ( que.front == -1)
 		{
 			que.front = 0;
 		}
-		que.q[++que.rear] = ele;
+		que.rear = (que.rear + 1) % que.size;
+		que.q[que.rear] = ele;
 
 	}
 	else
@@ -55,34 +55,32 @@ int queue::deque()
 {
 	if (!Underflow())
 	{
+		
+		int x=-999;
 		if (que.rear == que.front) {
+			x = que.q[que.front];
 			que.rear = -1;
 			que.front = -1;
 		}
-		int x = que.q[que.front--];
+		else {
+			que.front = (que.front + 1) % que.size;
+			x = que.q[que.front];
+		}
 		return x;
 	}
 	else
 		cout << "underflow";
 }
-int queue::peek()
-{
-	if (!Underflow())
-	{
-		if (que.rear == que.front) {
-			que.rear = -1;
-			que.front = -1;
-		}
-		int x = que.q[que.front];
-		return x;
-	}
-	else
-		cout << "underflow";
-}
+
 void queue::display()
 {
-	for (int i = que.front;i <= que.rear;i++)
-		cout << que.q[i];
+	int i;
+	if (!Underflow())
+	{
+		for ( i = que.front;i != que.rear;i=(i+1)%que.size)
+			cout << que.q[i];
+	}
+	cout << que.q[i];
 }
 queue::~queue()
 {
@@ -113,10 +111,8 @@ int main()
 		case 2: z = q1.deque();
 			cout << z;
 			break;
-		case 3: z = q1.peek();
-			cout << z;
-			break;
-		case 4:q1.display();
+		
+		case 3:q1.display();
 			break;
 		default:cout << "invalid ";
 			break;

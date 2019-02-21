@@ -4,25 +4,23 @@ struct node
 {
 	int data;
 	struct node *next;
-
+	struct node*prev;
 };
 class list_
 {
 	struct node *start;
 public:
 	list_();
-    void insert_first(int);
+	void insert_first(int);
 	void insert_last(int);
-	void insert_after(int,int);
-	void insert_before(int,int);
+	void insert_after(int, int);
+	void insert_before(int, int);
 	int delete_first();
 	int delete_last();
 	void delete_spec(int);
 	void travel_forward();
 	void travel_back();
-	void rev();
 	~list_();
-	friend void print(struct node);
 };
 list_::list_()
 {
@@ -33,7 +31,10 @@ void list_::insert_first(int ele)
 	struct node *temp;
 	temp = new node;
 	temp->data = ele;
+	temp->prev=NULL;
 	temp->next = start;
+	if(start!=NULL)
+	start->prev = temp;
 	start = temp;
 }
 void list_::insert_last(int ele)
@@ -41,23 +42,26 @@ void list_::insert_last(int ele)
 	struct node *temp, *curr;
 	temp = new node;
 	temp->data = ele;
+	temp->next = NULL;
 	if (start != NULL)
 	{
 		curr = start;
 		while (curr->next != NULL)
 			curr = curr->next;
+		temp->prev = curr;
 		curr->next = temp;
-		temp->next = NULL;
 	}
-	else
-		temp->next = NULL;
+	else{
+		temp->prev=NULL;
+	start = temp;}
 }
 void list_::insert_after(int sel, int ele)
 {
 	if (start != NULL) {
 		struct node*curr;
+		curr = new node;
 		curr = start;
-		while (curr != NULL && curr->data == sel)
+		while (curr != NULL && curr->data != sel)
 			curr = curr->next;
 		if (curr != NULL)
 		{
@@ -65,6 +69,9 @@ void list_::insert_after(int sel, int ele)
 			temp = new node;
 			temp->data = ele;
 			temp->next = curr->next;
+			temp->prev = curr;
+			if (curr->next != NULL)
+				curr->next->prev = temp;
 			curr->next = temp;
 		}
 		else
@@ -76,31 +83,25 @@ void list_::insert_before(int sel, int ele)
 {
 	if (start != NULL)
 	{
-		if (start->data == sel)
-		{
-			struct node *temp;
-			temp = new node;
-			temp->data = ele;
-			temp->next = start;
-			start = temp;
-		}
-		else
-		{
 			struct node *curr;
 			curr = start;
-			while (curr->next != NULL && curr->next->data != sel)
+			while (curr != NULL && curr->data != sel)
 				curr = curr->next;
-			if (curr->next != NULL) {
+			if (curr != NULL) {
 				struct node *temp;
 				temp = new node;
 				temp->data = ele;
-				temp->next = curr->next;
-				curr->next = temp;
+				temp->next = curr;
+				temp->prev = curr->prev;
+				if (curr->prev != NULL)
+					curr->prev->next = temp;
+				else
+					start = temp;
+				curr->prev = temp;
 			}
 			else
-			   cout << "element not found";
+				cout << "element not found";
 		}
-    }
 	cout << "list empty";
 }
 int list_::delete_first()
@@ -110,7 +111,9 @@ int list_::delete_first()
 	if (start != NULL)
 	{
 		temp = start;
-		start = start->next;
+		if (temp->next != NULL)
+			temp->next->prev = NULL;
+		start = temp->next;
 		x = temp->data;
 		delete temp;
 	}
@@ -120,25 +123,19 @@ int list_::delete_first()
 
 int list_::delete_last()
 {
-	int x = -99;
+	int x = -999;
 	if (start != NULL)
 	{
-		if (start->next == NULL)
-		{
-			x = start->data;
-			delete start;
-			start = NULL;
-		}
+		struct node*curr;
+		curr = start;
+		while (curr->next != NULL)
+			curr = curr->next;
+		x = curr->data;
+		if (curr->prev != NULL)
+			curr->prev->next = NULL;
 		else
-		{
-			struct node *curr;
-			curr = start;
-			while (curr->next->next != NULL)
-				curr = curr->next;
-			delete curr->next;
-			curr->next = NULL;
-
-		}
+			start = NULL;
+		delete curr;
 	}
 	cout << "list empty";
 	return x;
@@ -148,29 +145,22 @@ void list_::delete_spec(int ele)
 	struct node *temp;
 	if (start != NULL)
 	{
-		if(start->data==ele)
-		{
-			temp = start;
-			start = temp->next;
-			delete temp;
-		}
-		else
-		{
 			struct node *curr;
 			curr = start;
-			while (curr->next!=NULL && curr->next->data!=ele)
-			{
+			while (curr != NULL && curr->data != ele)
 				curr = curr->next;
-			}
-			if (curr->next != NULL)
+			if(curr!=NULL)
 			{
-				temp = curr->next;
-				curr->next = temp->next;
-				delete temp;
+				if (curr->prev != NULL)
+					curr->prev->next = curr->next;
+				else
+					start = curr->next;
+				if (curr->next != NULL)
+					curr->next->prev = curr->prev;
+				delete curr;
 			}
 			else
 		       cout << "element not found";
-			}
 	}
 	cout << "list empty";
 }
@@ -185,36 +175,23 @@ void list_::travel_forward()
 	}
 
 }
-void print(struct node*curr)
-{
-	if (curr != NULL)
-	{
-		print(curr->next);
-		cout << curr->data;
-	}
-}
+
 void list_::travel_back()
 {
 	if (start != NULL)
-		print(start);
-}
-
-void list_::rev()
-{
-	struct node *temp,*rev;
-	rev = NULL;
-	if (start!= NULL || start->next != NULL)
 	{
-		while (start!= NULL)
+		struct node *curr;
+		curr = start;
+		while (curr->next != NULL)
+			curr = curr->next;
+		while (curr != NULL)
 		{
-			temp = start;
-			start = temp->next;
-			temp->next = rev;
-			rev = temp;
+			cout << curr->data;
+			curr = curr->prev;
 		}
-		start = rev;
 	}
 }
+
 
 list_::~list_()
 {
@@ -229,13 +206,13 @@ list_::~list_()
 int main()
 {
 	list_ l1;
-	int choice,n;
+	int choice, n;
 	cout << "enter n value";
 	cin >> n;
 	for (int i = 0;i < n;i++)
 	{
 		cout << "enter choice";
-		cout << "1.add element at first"<<endl << "2.add element at end" << endl << "3.insert after" << endl << "4.insert before" << endl << "5.delete first" << endl << "6.delete last" << endl << "7.delete spec" << endl << "8.travel forward" << endl << "9.travel backward" << endl << "10.rev";
+		cout << "1.add element at first" << endl << "2.add element at end" << endl << "3.insert after" << endl << "4.insert before" << endl << "5.delete first" << endl << "6.delete last" << endl << "7.delete spec" << endl << "8.travel forward" << endl << "9.travel backward" << endl << "10.rev";
 		cin >> choice;
 		switch (choice)
 		{
@@ -249,22 +226,22 @@ int main()
 			cin >> b;
 			l1.insert_last(b);
 			break;
-		case 3:int c,d;
+		case 3:int c, d;
 			cout << "enter c valuethe element to be added";
-            cin >> c;
+			cin >> c;
 			cout << "enter d value the element to be found";
 			cin >> d;
-			l1.insert_after(d,c);
+			l1.insert_after(d, c);
 			break;
-		case 4:int e,f;
+		case 4:int e, f;
 			cout << "enter a valuethe element to be added";
 			cin >> e;
 			cout << "enter n value the element to be found";
 			cin >> f;
-			l1.insert_before(f,e);
+			l1.insert_before(f, e);
 			break;
 		case 5:int g;
-			g=l1.delete_first();
+			g = l1.delete_first();
 			break;
 		case 6:int h;
 			h = l1.delete_last();
@@ -272,16 +249,13 @@ int main()
 		case 7:int k;
 			cout << "enter a valuethe element to be deleted";
 			cin >> k;
-			 l1.delete_spec(k);
+			l1.delete_spec(k);
 			break;
 		case 8:
 			l1.travel_forward();
 			break;
 		case 9:
 			l1.travel_back();
-			break;
-		case 10:
-			l1.rev();
 			break;
 		default:cout << "invalid ";
 			break;
@@ -290,129 +264,3 @@ int main()
 	system("pause");
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

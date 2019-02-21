@@ -51,6 +51,7 @@ void list_::insert_last(int ele)
 	}
 	else
 		temp->next = NULL;
+	start = temp;
 }
 void list_::insert_after(int sel, int ele)
 {

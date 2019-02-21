@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{3350C6C4-8289-45BC-9628-86C2361F9F90}</ProjectGuid>
-    <RootNamespace>cass2q3</RootNamespace>
+    <ProjectGuid>{EDEDC0B5-4D23-4341-969E-C478E5135786}</ProjectGuid>
+    <RootNamespace>selfadusting</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,7 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="c++_ass2_q3.cpp" />
+    <ClCompile Include="self_adusting.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

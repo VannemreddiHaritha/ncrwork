@@ -47,7 +47,7 @@ void poly::add(poly p1, poly p2)
 	curr2 = p2.start;
    if (p1.start == NULL && p2.start == NULL)
 		cout << "lists are empty ";
-	while(curr1!=NULL && curr2!=NULL)
+	while(curr1!=NULL && curr2!=NULL)//
 	{
 		if (curr1->power == curr2->power)
 		{

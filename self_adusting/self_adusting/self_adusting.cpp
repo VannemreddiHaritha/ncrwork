@@ -34,35 +34,52 @@ void list_::travel_forward()
 	curr = start;
 	while (curr != NULL)
 	{
-		cout << curr->data;
+		cout << curr->data<<"->";
 		curr = curr->next;
 	}
+	cout << "NULL\n";
 
 }
 void list_::self(int ele)
 {
-	struct node *curr;
+	/*struct node *curr;
 	struct node *temp;
+//	temp = new node;
 	curr = start;
 	if (start != NULL)
 	{
-		while (curr->next != NULL && curr->next->data != ele)
-				curr = curr->next;
-			if (curr->next != NULL)
+		while (curr->next != NULL && curr->next->data != ele) 
+			curr = curr->next;
+		
+		if (curr->next != NULL)
+		{ 
+		
+			temp = curr->next;
+			if (curr->next->next != NULL)
 			{
-				temp = curr->next;
-				if (curr->next->next != NULL)
-					curr->next = curr->next->next;
-				else
-					curr->next = NULL;
-				temp->next = start;
-				start = temp;
+				curr->next = curr->next->next;
+				cout << "check";
 			}
 			else
+				curr->next = NULL;
+			temp->next = start;
+			start = temp;
+		}
+		else if (start->next == NULL)
+		{
+			cout << "done\n";
+		}
+		else
 				cout << "element not found";	
 	}
 	else
-		cout << "list empty";
+		cout << "list empty";*/
+
+	node *d;
+	node *temp;
+
+
+
 }
 
 list_::~list_()
@@ -79,12 +96,10 @@ int main()
 {
 	list_ l1;
 	int choice, n;
-	cout << "enter n value";
-	cin >> n;
-	for (int i = 0; i < n; i++)
+	while(1)
 	{
 		cout << "enter choice";
-		cout << "1.add element at first" << endl << "2.self adusting" << "3.forward travel";
+		cout << "1) add element at first " << "3) self adusting " << "2) forward travel" << "4) exit";
 		cin >> choice;
 		switch (choice)
 		{
@@ -95,10 +110,13 @@ int main()
 			break;
 		case 2:l1.travel_forward();
 			break;
-		case 3:int n;
+		case 3: {int n;
 			cout << "enter a value";
 			cin >> n;
 			l1.self(a);
+			break;
+		}
+		case 4: exit(0);
 		}
 	}
 	system("pause");

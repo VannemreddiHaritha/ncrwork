@@ -1,93 +1,124 @@
 #include<iostream>
 using namespace std;
-struct node1
+struct node
 {
-	int data1;
-	int coeff1;
-	struct node1 *next;
+	int coeff;
+	int power;
+	struct node *next;
 
 };
-struct node2
+class poly
 {
-	int data2;
-	int coeff2;
-	struct node2 *next;
+	struct node *start;
+public:
+	poly()
+	{
+		start = NULL;
+	}
+	void insert_first(int,int);
+	void travel_forward();
+	void add(poly, poly);
 
 };
-struct node3
+void poly::insert_first(int ele1,int ele2)
 {
-	int data3;
-	int coeff3;
-	struct node3 *next;
-
-};
-class poly 
-{
-	struct node1 *start1;
-	struct node2 *start2;
-	struct node3 *node;
-	void insert_first1(int, int);
-	void insert_first2(int, int);
-	void travel_forward1();
-	void travel_forward2();
-	void travel_forward2();
-	void travel_forward3();
-};
-void poly::insert_first1(int ele,int coeff)
-{
-	struct node1 *temp;
-	temp = new node1;
-	temp->data1 = ele;
-	temp->coeff1 = coeff;
-	temp->next = start1;
-	start1 = temp;
+	struct node *temp;
+	temp = new node;
+	temp->coeff= ele1;
+	temp->power = ele2;
+	temp->next = start;
+	start= temp;
 }
-void poly::insert_first2(int ele, int coeff)
+void poly::travel_forward()
 {
-	struct node2 *temp;
-	temp = new node2;
-	temp->data2 = ele;
-	temp->coeff2= coeff;
-	temp->next = start2;
-	start2 = temp;
-}
-void poly::travel_forward1()
-{
-	struct node1*curr;
-	curr = start1;
+	struct node*curr;
+	curr = start;
 	while (curr != NULL)
 	{
-		cout << curr->data1<<" ";
-		cout << curr->coeff1 << endl;
+		cout << curr->coeff<<" ,"<<curr->power<<endl;
 		curr = curr->next;
 	}
 
 }
-void poly::travel_forward2()
+void poly::add(poly p1, poly p2)
 {
-	struct node2*curr;
-	curr = start2;
-	while (curr != NULL)
+	struct node*curr1,* curr2;
+	curr1 = p1.start;
+	curr2 = p2.start;
+   if (p1.start == NULL && p2.start == NULL)
+		cout << "lists are empty ";
+	while(curr1->next!=NULL && curr2->next!=NULL)
 	{
-		cout << curr->data2 << " ";
-		cout << curr->coeff2<< endl;
-		curr = curr->next;
+		if (curr1->power == curr2->power)
+		{
+			insert_first((curr1->coeff) + (curr2->coeff), curr1->power);
+			curr1 = curr1->next;
+			curr2 = curr2->next;
+		}
+		else if (curr1->power > curr2->power)
+		{
+			insert_first(curr1->coeff, curr1->power);
+			curr1 = curr1->next;
+		}
+		else if (curr1->power < curr2->power)
+		{
+			insert_first(curr2->coeff, curr2->power);
+			curr2 = curr2->next;
+		}
+
+	}
+	while (curr1 != NULL) {
+		insert_first(curr1->coeff, curr1->power);
+		curr1 = curr1->next;
+	}
+	while (curr2!= NULL) {
+		insert_first(curr2->coeff, curr2->power);
+		curr2 = curr2->next;
 	}
 
+
 }
-void poly::travel_forward3()
+int main()
 {
-	struct node3*curr;
-	curr = start3;
-	while (curr != NULL)
+	poly p1, p2, p3;
+	int choice;
+	
+	
+	while (1)
 	{
-		cout << curr->data3 << " ";
-		cout << curr->coeff3<< endl;
-		curr = curr->next;
+		cout << "1)add elements poly1" << "2)add elements poly2" << "3)add both polynomials" <<"4)display "<<"5)exit "<< endl;
+		cout << "enter choice";
+		cin >> choice;
+		switch (choice)
+		{
+		case 1:cout << "enter the coeffient";
+			int coeff1;
+			cin >> coeff1;
+			cout << "enter the power";
+			int power1;
+			cin >> power1;
+			p1.insert_first(coeff1,power1);
+			break;
+		case 2:cout << "enter the coeffient2";
+			int coeff2;
+			cin >> coeff2;
+			cout << "enter the power2";
+			int power2;
+			cin >> power2;
+			p2.insert_first(coeff2, power2);
+			break;
+		case 3:p3.add(p1, p2);
+			break;
+		case 4:cout << "polynomial 1" << endl;
+			p1.travel_forward();
+			cout << "polynomial 2" << endl;
+			p2.travel_forward();
+			cout << "polynomial 3" << endl;
+			p3.travel_forward();
+			break;
+		case 5:exit(0);
+         }
 	}
-
+	system("pause");
+	return 0;
 }
-
-
-
-

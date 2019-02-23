@@ -11,16 +11,19 @@ int main()
 	{
 		cin >> array[i];
 	}
-	small = array[0];
 	for (i = 0;i <= size - 1;i++)
 	{
-		for (j = i + 1;j <= size - 1;j++)
+		small = i;
+		j = i + 1;
 		{
-			if (small > array[j])
-				small = array[j];
+			while (j <= size - 1 ) {
+				if(array[small]>array[j])
+				small= j;
+				j = j + 1;
+			}
 		}
-		temp = small;
-		small = array[i];
+		temp = array[small];
+		array[small] = array[i];
 		array[i] = temp;
 	}
 	cout << "sorted array is";

@@ -15,11 +15,10 @@ int main()
    for (i = 1;i <= size - 1;i++)
 	{
 		temp = array[i];
-		j = i - 1;
-		while (j >= 0 && array[j] > temp) 
+	
+		for (j=i-1;j >= 0 && array[j] > temp;j--) 
 		{
 			array[j + 1] = array[j];
-			j = j - 1;
 		}
 		
 		array[j + 1] = temp;

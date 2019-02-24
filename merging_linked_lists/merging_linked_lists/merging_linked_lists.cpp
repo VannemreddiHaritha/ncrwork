@@ -48,12 +48,12 @@ void link::merge(link l1,link l2)
 	while (curr1 != NULL && curr2 != NULL)//
 	{
 		
-	  if (curr1->data > curr2->data)
+	  if(curr1->data > curr2->data)
 		{
 			insert_first(curr2->data);
 			curr2 = curr2->next;
 		}
-		else if (curr1->data <= curr2->data)
+		else if(curr1->data <= curr2->data)
 		{
 			insert_first(curr1->data);
 			curr1 = curr1->next;
@@ -84,28 +84,26 @@ int main()
 		cin >> choice;
 		switch (choice)
 		{
-		case 1:cout << "enter the data";
+		case 1:cout << "enter the data1";
 			int data;
 			cin >> data;
 			
 			l1.insert_first(data);
 			break;
-		case 2:cout << "enter the coeffient2";
-			int coeff2;
-			cin >> coeff2;
-			cout << "enter the power2";
-			int power2;
-			cin >> power2;
-			p2.insert_first(coeff2, power2);
+		case 2:cout << "enter data2";
+			int data2;
+			cin >> data2;
+			
+			l2.insert_first(data2);
 			break;
-		case 3:p3.add(p1, p2);
+		case 3:l3.merge(l1, l2);
 			break;
-		case 4:cout << "polynomial 1" << endl;
-			p1.travel_forward();
-			cout << "polynomial 2" << endl;
-			p2.travel_forward();
-			cout << "polynomial 3" << endl;
-			p3.travel_forward();
+		case 4:cout << "list 1" << endl;
+			l1.travel_forward();
+			cout << "list 2" << endl;
+			l2.travel_forward();
+			cout << "list 3" << endl;
+			l3.travel_forward();
 			break;
 		case 5:exit(0);
 		}

@@ -40,47 +40,52 @@ void list_::travel_forward()
 	cout << "NULL\n";
 
 }
-void list_::self(int ele)
+void list_::self(int e)
 {
-	/*struct node *curr;
-	struct node *temp;
-//	temp = new node;
-	curr = start;
+	struct node *temp, *curr;
+
 	if (start != NULL)
+
 	{
-		while (curr->next != NULL && curr->next->data != ele) 
-			curr = curr->next;
-		
-		if (curr->next != NULL)
-		{ 
-		
-			temp = curr->next;
-			if (curr->next->next != NULL)
-			{
-				curr->next = curr->next->next;
-				cout << "check";
-			}
-			else
-				curr->next = NULL;
-			temp->next = start;
-			start = temp;
-		}
-		else if (start->next == NULL)
+
+		if (start->data != e)
+
 		{
-			cout << "done\n";
+
+			curr = start;
+
+			while (curr->next != NULL && curr->next->data != e)
+
+				curr = curr->next;
+
+			if (curr->next != NULL)
+
+			{
+
+				temp = curr->next;
+
+				curr->next = temp->next;
+
+				delete temp;
+
+				insert_first(e);
+
+			}
+
+			else
+
+				cout << "Element is not found";
+
 		}
-		else
-				cout << "element not found";	
+
 	}
+
 	else
-		cout << "list empty";*/
 
-	node *d;
-	node *temp;
-
-
+		cout << "List is empty";
 
 }
+	
 
 list_::~list_()
 {
@@ -113,7 +118,7 @@ int main()
 		case 3: {int n;
 			cout << "enter a value";
 			cin >> n;
-			l1.self(a);
+			l1.self(n);
 			break;
 		}
 		case 4: exit(0);

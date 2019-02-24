@@ -35,7 +35,7 @@ void merge(int array[], int list_start1, int list_end1, int list_end2)
 	while (j <= list_end2)
 		list3[k++] = array[j++];
 	while (list_end2 >= list_start1)
-		array[list_end2--] = array[--k];
+		array[list_end2--] = list3[--k];
 
 	delete list3;
 }

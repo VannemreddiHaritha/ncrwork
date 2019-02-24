@@ -18,7 +18,7 @@ public:
 	void travel_forward();
 	void merge(link, link);
 
-};
+};//give the elements in decending order
 void link::insert_first(int ele)
 {
 	struct node *temp;

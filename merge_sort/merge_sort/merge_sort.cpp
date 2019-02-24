@@ -41,7 +41,7 @@ void merge(int array[], int list_start1, int list_end1, int list_end2)
 }
 int main()
 {
-	int *array, i,  size, temp;
+	int *array, i,  size;
 	cout << "enter thr size of array" << endl;
 	cin >> size;
 	array = new int[size];

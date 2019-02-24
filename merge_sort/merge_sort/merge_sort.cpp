@@ -39,6 +39,7 @@ void merge(int array[], int list_start1, int list_end1, int list_end2)
 
 	delete list3;
 }
+//main program
 int main()
 {
 	int *array, i,  size;

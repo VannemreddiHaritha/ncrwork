@@ -14,19 +14,21 @@ public:
 };
 istream& operator>>(istream& cin, student &s)
 {
+	cout << "Enter the name" << endl;
 	cin >> s.name;
+	cout << "enter rollno" << endl;
 	cin >> s.roll;
+	cout << "enter three subject marks" << endl;
 	cin >> s.m1 >> s.m2 >> s.m3;
 	return cin;
 }
 ostream& operator<<(ostream& cout, student s)
 {
-	
-	cout << s.name<<endl;
-	cout << s.roll<<endl;
-	cout << s.m1 << endl << s.m2 << endl <<s.m3 << endl;
-	cout << s.marks<<endl;
-	cout << s.grade << endl;
+	cout <<"student name "<< s.name << endl;
+	cout <<"roll no " <<s.roll << endl;
+	cout << " the three subject marks are "<<s.m1 << endl << s.m2 << endl << s.m3 << endl;
+	cout <<"total marks " <<s.marks << endl;
+	cout << "grade is "<<s.grade << endl;
 	return cout;
 
 }
@@ -36,27 +38,26 @@ void get_result(student s[], int n)
 	for (i = 0;i < n;i++)
 	{
 		s[i].marks = s[i].m1 + s[i].m2 + s[i].m3;
-		if (s[i].marks/3 <=40)
+		if (s[i].marks / 3 <= 40)
 			s[i].grade = 'f';
-		else if (s[i].marks/3 > 40&&s[i].marks/3<60)
+		else if (s[i].marks / 3 > 40 && s[i].marks / 3 < 60)
 			s[i].grade = 'b';
-		else if (s[i].marks/3 >60 )
+		else if (s[i].marks / 3 > 60)
 			s[i].grade = 'a';
-
 	}
-	
 }
 int main()
 {
 	student s1[5];
 	int i;
 	int n;
-	cout << "enter n value";
+	cout << "Enter the number";
 	cin >> n;
 	for (i = 0;i < n;i++)
 	{
+		cout << "Enter details of Student" << i + 1 << endl;
 		cin >> s1[i];
-	
+
 	}
 	get_result(s1, n);
 	for (i = 0;i < n;i++)

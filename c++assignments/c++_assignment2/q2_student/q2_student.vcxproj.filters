@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="c++_ass2_q2.cpp">
+    <ClCompile Include="q2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

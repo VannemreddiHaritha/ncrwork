@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{E77A085C-34CF-401A-ACDE-3F27AAEA9596}</ProjectGuid>
-    <RootNamespace>cass2q2</RootNamespace>
+    <ProjectGuid>{114B838F-5C9C-4089-B545-6F61166DC696}</ProjectGuid>
+    <RootNamespace>q3employee</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,7 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="c++_ass2_q2.cpp" />
+    <ClCompile Include="q3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

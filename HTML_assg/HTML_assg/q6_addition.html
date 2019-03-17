@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>calculator</title>
+</head>
+<body>
+    <input id="one" type="number" placeholder="enter a number" /><br>
+    <input id="two" type="number" placeholder="enter a number" /><br>
+    Sum<h5 id="result"></h5><br>
+    <input type="submit" value="add" onclick="displayAdd()" />
+
+    <script>
+function displayAdd()
+{
+var a=document.getElementById("one");
+var b=document.getElementById("two");
+var result=Number(a.value)+Number(b.value);
+document.getElementById("result").innerHTML=" "+result;
+}
+    </script>
+</body>
+</html>

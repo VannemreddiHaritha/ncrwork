@@ -21,6 +21,7 @@ istream& operator>>(istream& cin, student &s)
 }
 ostream& operator<<(ostream& cout, student s)
 {
+	
 	cout << s.name<<endl;
 	cout << s.roll<<endl;
 	cout << s.m1 << endl << s.m2 << endl <<s.m3 << endl;
@@ -41,13 +42,16 @@ void get_result(student s[], int n)
 			s[i].grade = 'b';
 		else if (s[i].marks/3 >60 )
 			s[i].grade = 'a';
+
 	}
+	
 }
 int main()
 {
 	student s1[5];
 	int i;
 	int n;
+	cout << "enter n value";
 	cin >> n;
 	for (i = 0;i < n;i++)
 	{

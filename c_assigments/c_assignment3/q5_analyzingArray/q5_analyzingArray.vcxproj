@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{BFECCEDE-AF2D-43CF-ABAF-C80172869A59}</ProjectGuid>
-    <RootNamespace>negativeNumInArraytoFront</RootNamespace>
+    <ProjectGuid>{B867B60C-EF75-4975-8BEC-984EB38D0DF1}</ProjectGuid>
+    <RootNamespace>q5analyzingArray</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,7 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="negInArrayToFront.c" />
+    <ClCompile Include="..\..\c_assigments\c_assignment3\analyzingarrayass3\analyzingarrayass3\analzingArrayAss3.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

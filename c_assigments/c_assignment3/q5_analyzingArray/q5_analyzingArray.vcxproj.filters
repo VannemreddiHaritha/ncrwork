@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="analzingArrayAss3.c">
+    <ClCompile Include="..\..\c_assigments\c_assignment3\analyzingarrayass3\analyzingarrayass3\analzingArrayAss3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

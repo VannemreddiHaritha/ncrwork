@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{1EF47C75-2E8B-4E45-A831-FAEF90A120BF}</ProjectGuid>
-    <RootNamespace>creatingMenuAss3</RootNamespace>
+    <ProjectGuid>{3C977193-FEC9-4DB4-8C78-0739A7D59DA1}</ProjectGuid>
+    <RootNamespace>q2negInArrayToFront</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,8 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="compliment.c" />
-    <ClCompile Include="createMenuass3.c" />
+    <ClCompile Include="q2.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

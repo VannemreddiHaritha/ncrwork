@@ -18,10 +18,14 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\c_assigments\c_assignment3\creatingMenuAss3\creatingMenuAss3\compliment.c" />
+    <ClCompile Include="..\..\c_assigments\c_assignment3\creatingMenuAss3\creatingMenuAss3\createMenuass3.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{202FEE67-591C-4F76-ADA7-5328CDD87CD5}</ProjectGuid>
-    <RootNamespace>noOf1sinbinarynumber</RootNamespace>
+    <ProjectGuid>{0E6137C7-34CA-4BCA-A05E-AD369AF84589}</ProjectGuid>
+    <RootNamespace>q4creationOfMenu</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -114,9 +118,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="noOf1sinabinarynumber.c" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

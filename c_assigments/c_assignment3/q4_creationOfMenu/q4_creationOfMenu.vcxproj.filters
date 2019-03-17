@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="negInArrayToFront.c">
+    <ClCompile Include="..\..\c_assigments\c_assignment3\creatingMenuAss3\creatingMenuAss3\createMenuass3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\c_assigments\c_assignment3\creatingMenuAss3\creatingMenuAss3\compliment.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

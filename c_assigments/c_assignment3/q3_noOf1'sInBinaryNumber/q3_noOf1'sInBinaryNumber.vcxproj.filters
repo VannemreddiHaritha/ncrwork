@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="noOf1sinabinarynumber.c">
+    <ClCompile Include="..\q3_noOf1%27sInBinaryNumber\q3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

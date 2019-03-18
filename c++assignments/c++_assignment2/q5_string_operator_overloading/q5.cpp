@@ -37,7 +37,7 @@ public:
 	//+ overloading i.e concatenation of two strings
 	String operator+(String s2)
     {
-      String str_obj;
+      String str_obj;//a temporary objext
       str_obj.len = len + s2.len;
       if (str_obj.string == NULL)
                str_obj.string = new char[str_obj.len];
@@ -70,7 +70,8 @@ public:
 };
 istream& operator>>(istream& cin, String &s)
 {
-char str[50];
+char *str;
+str = new char[strlen(str)];
 cout << "enter string" << endl;
 cin >> str;
 if (s.string == NULL)

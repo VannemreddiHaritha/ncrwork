@@ -31,6 +31,8 @@ char* expansion(char*inputstring, char*outputstring)
 	{
 		if (inputstring[index1] == '-')
 		{//for invalid expression
+			if (inputstring[index1 + 1] == '-')
+				printf("invalid expression....they are two  '-'s at a time");
 			if (inputstring[index1 - 1] > inputstring[index1 + 1])
 			{
 				printf("\nInvalid expression");

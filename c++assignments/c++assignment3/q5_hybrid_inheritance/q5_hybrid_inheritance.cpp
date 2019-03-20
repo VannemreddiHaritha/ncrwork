@@ -1,106 +1,55 @@
 #include<stdio.h>
-
 #include<string.h>
-
 #include<iostream>
-
 using namespace std;
-
-class Person
-
+class person
 {
-
-	char *name;
-
-	int age;
-
+   char *name;
+   int age;
 public:
-
-	Person()
-
-	{
-
-		name = NULL;
-
-		age = 0;
-
-	}
-
-	Person(char *n, int a)
-
-	{
-
-		name = new char[strlen(n)];
-
-		strcpy(name, n);
-
-		age = a;
-
-	}
-
-	void getPersonDetails()
-
-	{
-
-		char s[50];
-
-		cout << "enter name and age\n";
-
-		cin >> s;
-
-		name = new char[strlen(s)];
-
-		strcpy(name, s);
-
-		cin >> age;
-
-	}
-
-	void displayPersonDetails()
-
-	{
-
-		cout << "Name = " << name << " age = " << age << endl;
-
-	}
-
-	~Person()
-
-	{
-
-		if (name != NULL)
-
-			delete name;
-
-	}
-
+   person()
+    {
+    	name = NULL;
+        age = 0;
+    }
+   person(char *n, int a)
+   {
+    	name = new char[strlen(n)];
+        strcpy(name, n);
+        age = a;
+   }
+   void getPersonDetails()
+    {
+	   char s[50];
+       cout << "enter name and age\n";
+       cin >> s;
+       name = new char[strlen(s)];
+       strcpy(name, s);
+       cin >> age;
+   }
+   void displayPersonDetails()
+    {
+       cout << "Name = " << name << " age = " << age << endl;
+     }
+   ~person()
+   {
+	if (name != NULL)
+        delete name;
+    }
 };
-
-class Physique :virtual public Person
-
+class Physique :virtual public person
 {
-
-	int height;
-
-	int weight;
-
+   int height;
+   int weight;
 public:
-
-	Physique()
-
-	{
-
-		height = weight = 0;
-
-	}
-
-	Physique(int ht, int wt)
-
-	{
-
-		height = ht;
-
-		weight = wt;
+    Physique()
+     {
+      height = weight = 0;
+	 }
+    Physique(int ht, int wt)
+    {
+     	height = ht;
+      weight = wt;
 
 	}
 
@@ -124,7 +73,7 @@ public:
 
 };
 
-class Family :virtual public Person
+class Family :virtual public person
 
 {
 

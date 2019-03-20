@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-
+#include<iostream>
 void stringreverse(char *string1)
 {
 	int length, i, j = 0;
@@ -43,7 +43,7 @@ int stringcamp(char*string1)
 	scanf_s("%d", &NoOfBytes1);
 	string2 = (char*)malloc(NoOfBytes1*sizeof(char));
 	printf("enter string2");
-	scanf_s("%s", string2, strlen(string2));
+	scanf_s("%s", string2, NoOfBytes1);
    while (*string1 == *string2)
 	{
 		if (*string1 == '\0')
@@ -65,7 +65,7 @@ void stringcat(char *string1)
 	scanf_s("%d", &NoOfBytes1);
 	string2 = (char*)malloc(NoOfBytes1 * sizeof(char));
 	printf("enter string2");
-	scanf_s("%s", string2, strlen(string2));
+	scanf_s("%[^\n\t]s", string2, strlen(string2));
 	length1 = strlen(string1);
 	length2 = strlen(string2);
 	string1 = realloc(string1, length2);
@@ -89,7 +89,8 @@ int main()
 	scanf_s("%d", &NoOfBytes);
 	printf("the original string is ");
 	string1 = (char*)malloc(NoOfBytes * sizeof(char));//dynamic memory allocation for original string
-	scanf_s("%s", string1, strlen(string1));
+	//scanf_s("%[^ \t\n]s", string1, NoOfBytes);
+	
 	while(1)
 	{
 		printf("\n1.string reverse\n2.stringcopy\n3.string camparision\n4.string cancatenation\n5.exit\n");
@@ -123,6 +124,7 @@ int main()
 			break;
 		}
 		case 5:exit(0);
+			break;
 		default:
 			printf("entered wrong choice");
 		}

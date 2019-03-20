@@ -7,7 +7,6 @@ class matrix
 public:
 	void get_data()
 	{
-
 		int i, j;
 		cout << "enter 9 elements";
 		for (i = 0;i < 3;i++)

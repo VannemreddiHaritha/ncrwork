@@ -10,10 +10,8 @@ public:
 	{
 		meter = m;
 		centi = c;
-
 	}
 	friend void add(distance1, distance2);
-
 };
 class distance2
 {

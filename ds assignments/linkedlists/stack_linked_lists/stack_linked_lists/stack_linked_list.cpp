@@ -19,7 +19,7 @@ public:
 };
 stack::stack()
 {
-	
+	start == NULL;
 
 }
 

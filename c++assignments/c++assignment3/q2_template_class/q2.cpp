@@ -2,6 +2,8 @@
 #include<iostream>
 using namespace std;
 #define SIZE 100
+
+
 template<class T>
 class Stack
 {
@@ -127,6 +129,7 @@ cout << "Character stack"<<endl;
 	case 5:
 		exit(0);
 	}
+	
 return 0;
 
 }

@@ -1,0 +1,64 @@
+<script src="C:\NCR ass1\jquery-3.3.1.js"></script>
+<script>
+       $(document).ready(function(){$("#cb").change(function(){
+      if(this.checked){
+                      $("#HNo1").val(HNo.value);
+                     $("#street1").val(street.value);
+                      $("#area1").val(area.value);
+                      $("#select1").val(select.value);
+                     $("#city1").val(city.value);
+                     $("#state1").val(state.value);
+                      $("#pin1").val(pin.value);
+                  }
+else
+                   {
+                       $("#HNo1").val(" ");
+                     $("#street1").val(" ");
+                      $("#area1").val(" ");
+                      $("#select1").val(" ");
+                     $("#city1").val(" ");
+                     $("#state1").val(" ");
+                      $("#pin1").val(" ");
+                  }
+
+                   });
+               });
+</script>
+<html>
+<body>
+    <h1>Temporary address</h1>
+    <form>
+        HouseNumber  <input id="HNo" type="text" /><br><br>
+        Street Name  <input id="street" type="text" /><br><br>
+        Area         <input id="area" type="text" /><br><br>
+        Mandal<select id="select">
+            <option value="select">select</option>
+            <option value="balanagar">Balanagar</option>
+            <option value="Ameerpet">Ameerpet</option>
+            <option value="tirumalagiri">tirumalagiri</option>
+            <option value="somajiguda">somajiguda</option>
+        </select><br><br>
+        city	    <input id="city" type="text" /><br><br>
+        State       <input id="state" type="text" /><br><br>
+        Pin code    <input id="pin" type="text" /><br><br>
+    </form>
+    <input type="checkbox" id="cb" />same as permanent address
+    <h1>Permanent address</h1>
+    <form>
+        HouseNumber  <input id="HNo1" type="text" /><br><br>
+        Street Name  <input id="street1" type="text" /><br><br>
+        Area         <input id="area1" type="text" /><br><br>
+        Mandal<select id="select1">
+            <option value="select">select</option>
+            <option value="balanagar">Balanagar</option>
+            <option value="Ameerpet">Ameerpet</option>
+            <option value="tirumalagiri">tirumalagiri</option>
+            <option value="somajiguda">somajiguda</option>
+        </select><br><br>
+        city	    <input id="city1" type="text" /><br><br>
+        State       <input id="state1" type="text" /><br><br>
+        Pin code    <input id="pin1" type="text" /><br><br>
+    </form>
+
+</body>
+</html>

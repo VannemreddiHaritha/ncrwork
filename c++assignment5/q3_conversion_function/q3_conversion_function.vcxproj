@@ -20,10 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{F318BA32-3C08-4A0A-B9D3-76E03B8C2A8E}</ProjectGuid>
-    <RootNamespace>q2dikshitrasalgo</RootNamespace>
+    <ProjectGuid>{597ACED5-9285-4E73-9074-784CC46EA66B}</ProjectGuid>
+    <RootNamespace>q3conversionfunction</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>q2_bfs_dfs_dikshitra</ProjectName>
+    <ProjectName>q2_conversion_function</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

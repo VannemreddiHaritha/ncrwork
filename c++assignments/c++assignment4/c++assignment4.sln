@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "q1_deque", "q1_deque\q1_deq
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "q2_dikshitras_algo", "q2_dikshitras_algo\q2_dikshitras_algo.vcxproj", "{F318BA32-3C08-4A0A-B9D3-76E03B8C2A8E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "q3_matrix", "q3_matrix\q3_matrix.vcxproj", "{90544033-3618-40D1-AD8A-2392BCD682BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{F318BA32-3C08-4A0A-B9D3-76E03B8C2A8E}.Release|x64.Build.0 = Release|x64
 		{F318BA32-3C08-4A0A-B9D3-76E03B8C2A8E}.Release|x86.ActiveCfg = Release|Win32
 		{F318BA32-3C08-4A0A-B9D3-76E03B8C2A8E}.Release|x86.Build.0 = Release|Win32
+		{90544033-3618-40D1-AD8A-2392BCD682BA}.Debug|x64.ActiveCfg = Debug|x64
+		{90544033-3618-40D1-AD8A-2392BCD682BA}.Debug|x64.Build.0 = Debug|x64
+		{90544033-3618-40D1-AD8A-2392BCD682BA}.Debug|x86.ActiveCfg = Debug|Win32
+		{90544033-3618-40D1-AD8A-2392BCD682BA}.Debug|x86.Build.0 = Debug|Win32
+		{90544033-3618-40D1-AD8A-2392BCD682BA}.Release|x64.ActiveCfg = Release|x64
+		{90544033-3618-40D1-AD8A-2392BCD682BA}.Release|x64.Build.0 = Release|x64
+		{90544033-3618-40D1-AD8A-2392BCD682BA}.Release|x86.ActiveCfg = Release|Win32
+		{90544033-3618-40D1-AD8A-2392BCD682BA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

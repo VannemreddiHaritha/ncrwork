@@ -1,0 +1,28 @@
+<script src="C:\NCR ass1\jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function(){
+                   $("#btn").click(function(){
+      if($("#btn").val()=="hide")
+              { $("#one").hide();
+                $("#btn").val("show") ;  }
+else
+               { $("#one").show();
+                 $("#btn").val("hide");
+                }
+          });
+      });
+
+
+
+
+</script>
+<html>
+<body>
+    <form id="one">
+        Name  <input id="name" type="text" /><br><br>
+        Branch  <input id="branch" type="text" /><br><br>
+        section <input id="section" type="text" /><br><br>
+    </form>
+    <input id="btn" type="button" value="hide" /><br><br>
+</body>
+</html>
